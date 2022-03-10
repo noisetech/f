@@ -17,9 +17,10 @@ class RuanganController extends Controller
     public function index()
     {
         $ruangan = Ruangan::with(['kegiatan'])->get()
-            ->sortByDesc('waktu_awal')
-            ->sortByDesc('waktu_akhir')
+            ->sortBy('kegiatan_id')
+            ->sortByDesc(['waktu_awal', 'waktu_akhir'])
             ->sortByDesc('hari');
+
 
         return view('pages.admin.ruangan.index', [
             'ruangan' => $ruangan

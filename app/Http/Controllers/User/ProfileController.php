@@ -17,9 +17,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = User::whereHas('kegiatan', function ($q) {
-            return $q->where('user_id', Auth::user()->id);
-        })->get();
+        $user = User::with(['kegiatan'])->where('id', Auth::user()->id)->get();
+
 
         return view('pages.user.profile', [
             'user' => $user

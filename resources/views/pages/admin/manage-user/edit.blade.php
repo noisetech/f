@@ -41,8 +41,8 @@
                     </div>
 
 
-                    <button class="btn btn-block btn-primary" type="submit">
-                        Simpan
+                    <button class="btn btn-block btn-warning" type="submit">
+                        Ubah
                     </button>
                 </form>
             </div>

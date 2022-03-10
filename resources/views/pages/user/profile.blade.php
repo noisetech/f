@@ -24,29 +24,38 @@
                            </tr>
                        </thead>
                        <tbody>
-                           @foreach ($user as $item)
-                                <tr>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>
-                                        <ul>
-                                            @foreach ($item->kegiatan as $kegiatan)
-                                            <li>
-                                                {{ $kegiatan->nama_kegiatan }}
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </td>
-                                </tr>
-                           @endforeach
+                        @foreach ($user as $item)
+                        <tr>
+                         <td>{{ $item->name }}</td>
+                         <td>{{ $item->email }}</td>
+                         <td>
+                            @if (empty($item->kegiatan))
+
+                            @else
+                                @foreach ($item->kegiatan as $kegiatan)
+                                    {{ $kegiatan->nama_kegiatan }}
+                                @endforeach
+                            @endif
+                         </td>
+                        </tr>
+
+
+
+                        @endforeach
+                       </tbody>
                        </tbody>
                     </table>
 
                     <div class="row mt-3">
                         <div class="col-4">
+                            @if (!empty($item->kegiatan))
                             <a href="{{ route('profile.edit', $item->id) }}" class="btn btn-sm btn-warning">
                                 Edit
                             </a>
+
+                            @else
+
+                            @endif
                         </div>
                     </div>
                 </div>

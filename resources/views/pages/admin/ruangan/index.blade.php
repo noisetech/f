@@ -5,8 +5,18 @@
 
         <style>
             table, tr, td{
-                font-size: 14px;
+                font-size: 12px;
             }
+
+            a, .btn{
+                font-size: 12px;
+            }
+
+            button .btn{
+                font-size: 12px;
+            }
+
+
         </style>
 
 
@@ -33,7 +43,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table text-center table-bordered table-hover" cellspacing="0" width="100%" id="dataTable">
+                    <table class="table text-center table-bordered table-hover" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Ruangan</th>
@@ -57,19 +67,22 @@
                                     <td>{{ $item->waktu_akhir }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>
-                                        <a href="{{ route('ruangan.edit', $item->id) }}" class="btn btn-sm btn-warning">
-                                            Edit
-                                        </a>
 
-                                        <form action="{{ route('ruangan.destroy', $item->id) }}" method="POST"
-                                            style="display: inline-block">
-                                            @csrf
-                                            @method('delete')
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <a href="{{ route('ruangan.edit', $item->id) }}" class="btn btn-sm btn-warning mr-1">
+                                                Edit
+                                            </a>
 
-                                            <button class="btn btn-sm btn-danger" type="submit">
-                                                Hapus
-                                            </button>
-                                        </form>
+                                            <form action="{{ route('ruangan.destroy', $item->id) }}" method="POST"
+                                                style="display: inline-block">
+                                                @csrf
+                                                @method('delete')
+
+                                                <button class="btn btn-sm btn-danger" type="submit">
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </div>
 
                                     </td>
                                 </tr>

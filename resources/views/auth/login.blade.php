@@ -22,12 +22,12 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-white">
 
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center" style="margin-top: 80px">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 

@@ -3,13 +3,15 @@
 @section('content')
     <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Ruangan</h1>
-        </div>
-
-
         <div class="card shadow">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center m-0">
+                    <div class="font-weight-bold text-primary">
+                        <p>Tambah Kegiatan</p>
+                    </div>
+
+                </div>
+            </div>
             <div class="card-body">
                 <form action="{{ route('ruangan.store') }}" method="POST">
                     @csrf
